@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>サウナふわっとPro - 速乾技術の革命</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+            line-height: 1.8;
+            color: #2c3e50;
+            background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* ヒーローセクション */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+            animation: float 20s linear infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translate(-50%, -50%); }
+            100% { transform: translate(0, 0); }
+        }
+        
+        .hero-content {
+            text-align: center;
+            z-index: 1;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        .value-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .value-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.15);
+        }
+        
+        .value-icon {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 15px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+        
+        .value-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .value-desc {
+            font-size: 0.9rem;
+            opacity: 0.85;
+        }
+        
+        /* セクション共通スタイル */
+        .section {
+            padding: 80px 0;
+            position: relative;
+        }
+        
+        .section-title {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #1e3c72;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #ff6b6b, #ff8e53);
+            border-radius: 2px;
+        }
+        
+        /* 問題提起セクション */
+        .problems {
+            background: #f8f9fa;
+        }
+        
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .problem-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            animation: slideIn 0.6s ease-out forwards;
+        }
+        
+        .problem-card:nth-child(1) { animation-delay: 0.1s; }
+        .problem-card:nth-child(2) { animation-delay: 0.2s; }
+        .problem-card:nth-child(3) { animation-delay: 0.3s; }
+        .problem-card:nth-child(4) { animation-delay: 0.4s; }
+        .problem-card:nth-child(5) { animation-delay: 0.5s; }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .problem-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        }
+        
+        .problem-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            color: white;
+            font-size: 28px;
+        }
+        
+        .problem-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        .problem-desc {
+            color: #6c757d;
+            line-height: 1.6;
+        }
+        
+        /* 4層構造セクション */
+        .structure {
+            background: white;
+            overflow: hidden;
+        }
+        
+        .structure-visual {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto 60px;
+            padding: 40px 0;
+        }
+        
+        .layer {
+            position: relative;
+            margin: 20px 0;
+            padding: 30px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: layerAppear 0.6s ease-out forwards;
+        }
+        
+        .layer:nth-child(1) { animation-delay: 0.2s; }
+        .layer:nth-child(2) { animation-delay: 0.4s; }
+        .layer:nth-child(3) { animation-delay: 0.6s; }
+        .layer:nth-child(4) { animation-delay: 0.8s; }
+        
+        @keyframes layerAppear {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .layer:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            z-index: 10;
+        }
+        
+        .layer-number {
+            position: absolute;
+            left: -40px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: 700;
+        }
+        
+        .layer-content {
+            margin-left: 40px;
+        }
+        
+        .layer-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #1e3c72;
+        }
+        
+        .layer-desc {
+            color: #6c757d;
+            line-height: 1.6;
+        }
+        
+        .layer-feature {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 5px 15px;
+            background: #e3f2fd;
+            color: #1976d2;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        /* 会社紹介セクション */
+        .company {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        
+        .company-story {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-top: 50px;
+        }
+        
+        @media (max-width: 768px) {
+            .company-story {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+        
+        .story-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #1e3c72;
+        }
+        
+        .story-content p {
+            margin-bottom: 20px;
+            color: #5a6c7d;
+            line-height: 1.8;
+        }
+        
+        .highlight-box {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            margin: 30px 0;
+            border-left: 4px solid #ff6b6b;
+        }
+        
+        .highlight-box h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        .tech-transfer {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .tech-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .tech-item:hover {
+            transform: translateX(10px);
+        }
+        
+        .tech-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .tech-text {
+            flex: 1;
+        }
+        
+        .tech-title {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .tech-desc {
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+        
+        /* コラボ実績セクション */
+        .collaborations {
+            background: white;
+        }
+        
+        .collab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .collab-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 30px;
+            border-radius: 20px;
+            color: white;
+            text-align: center;
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .collab-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.3; }
+        }
+        
+        .collab-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .collab-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .collab-desc {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* ユーザーボイスセクション */
+        .testimonials {
+            background: #f8f9fa;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .quote-icon {
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-size: 48px;
+            color: #e0e0e0;
+            font-family: Georgia, serif;
+        }
+        
+        .testimonial-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #5a6c7d;
+            margin-bottom: 20px;
+            padding-left: 40px;
+        }
+        
+        .testimonial-author {
+            text-align: right;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        /* 価格セクション */
+        .pricing {
+            background: white;
+            text-align: center;
+        }
+        
+        .price-display {
+            font-size: 4rem;
+            font-weight: 700;
+            color: #ff6b6b;
+            margin: 40px 0;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .price-display::before {
+            content: '¥';
+            font-size: 2rem;
+            position: absolute;
+            left: -30px;
+            top: 10px;
+        }
+        
+        .price-display::after {
+            content: '(税込)';
+            font-size: 1rem;
+            position: absolute;
+            right: -60px;
+            bottom: 10px;
+            color: #6c757d;
+            font-weight: 400;
+        }
+        
+        .price-reasons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+            text-align: left;
+        }
+        
+        .reason-card {
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+        
+        .reason-card:hover {
+            transform: translateY(-5px);
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        
+        .reason-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        .reason-desc {
+            color: #6c757d;
+            line-height: 1.6;
+        }
+        
+        /* CTAセクション */
+        .cta {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+        
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 18px 40px;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 20px rgba(255,107,107,0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255,107,107,0.4);
+        }
+        
+        .cta-button.secondary {
+            background: transparent;
+            border: 2px solid white;
+            box-shadow: none;
+        }
+        
+        .cta-button.secondary:hover {
+            background: rgba(255,255,255,0.1);
+        }
+        
+        /* フッター */
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+        }
+        
+        /* レスポンシブ対応 */
+        @media (max-width: 768px) {
+            .value-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .layer-number {
+                position: static;
+                margin: 0 auto 20px;
+            }
+            
+            .layer-content {
+                margin-left: 0;
+            }
+            
+            .price-display::before {
+                left: -20px;
+            }
+            
+            .price-display::after {
+                position: static;
+                display: block;
+                margin-top: 10px;
+            }
+        }
+        
+        /* スクロールアニメーション */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- ヒーローセクション -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>サウナふわっとPro</h1>
+                <p class="hero-subtitle">50年の服飾技術が生んだ、究極の速乾サウナハット</p>
+                
+                <!-- 製品画像 -->
+                <div style="margin: 30px 0; animation: fadeInUp 1.2s ease-out;">
+                    <img src="https://img07.shop-pro.jp/PA01462/504/product/177927078.jpg" 
+                         alt="サウナふわっとPro製品画像" 
+                         style="max-width: 400px; width: 100%; height: auto; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.3);">
+                </div>
+                
+                <div class="value-cards">
+                    <div class="value-card">
+                        <div class="value-icon">⚡</div>
+                        <div class="value-title">脱水後即乾燥</div>
+                        <div class="value-desc">洗濯機の脱水後、ほぼ乾いた状態に</div>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">🔄</div>
+                        <div class="value-title">連続使用可能</div>
+                        <div class="value-desc">車内で自然乾燥、2〜3軒のハシゴもOK</div>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">🛡️</div>
+                        <div class="value-title">4層構造</div>
+                        <div class="value-desc">特許レベルの多層構造で熱を効率的に逃がす</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 問題提起セクション -->
+    <section class="section problems">
+        <div class="container">
+            <h2 class="section-title fade-in">従来のサウナハットの5つの不満</h2>
+            
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">💧</div>
+                    <div class="problem-title">乾かない</div>
+                    <div class="problem-desc">タオル地は翌日でも湿ったまま。生乾き臭の原因に。</div>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">🏋️</div>
+                    <div class="problem-title">重い</div>
+                    <div class="problem-desc">水を吸うと重くなり、頭が疲れる。持ち運びも不便。</div>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">👃</div>
+                    <div class="problem-title">臭う</div>
+                    <div class="problem-desc">湿ったまま放置すると雑菌が繁殖。毎回洗濯が必要。</div>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">🔥</div>
+                    <div class="problem-title">熱い</div>
+                    <div class="problem-desc">熱がこもって頭が熱くなりすぎる。長時間の使用が困難。</div>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">📦</div>
+                    <div class="problem-title">かさばる</div>
+                    <div class="problem-desc">厚手の生地で収納に困る。旅行や出張に持っていけない。</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 4層構造セクション -->
+    <section class="section structure">
+        <div class="container">
+            <h2 class="section-title fade-in">革新的な4層構造の秘密</h2>
+            <p style="text-align: center; color: #6c757d; margin-bottom: 50px;">
+                各層が異なる機能を持ち、相乗効果で究極の快適性を実現
+            </p>
+            
+            <!-- 製品の詳細画像 -->
+            <div style="text-align: center; margin: 40px 0;">
+                <img src="https://img07.shop-pro.jp/PA01462/504/product/177927078_o3.jpg" 
+                     alt="サウナふわっとPro詳細" 
+                     style="max-width: 500px; width: 100%; height: auto; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 20px;">
+                <p style="color: #6c757d; font-size: 0.9rem;">実際の製品：軽量かつコンパクトな設計</p>
+            </div>
+            
+            <div class="structure-visual">
+                <div class="layer">
+                    <div class="layer-number">1</div>
+                    <div class="layer-content">
+                        <div class="layer-title">外側：超速乾層</div>
+                        <div class="layer-desc">
+                            特殊な速乾素材が水分を素早く蒸発させ、気化熱により頭部を冷却。
+                            洗濯後の乾燥時間を大幅に短縮します。
+                        </div>
+                        <span class="layer-feature">気化熱冷却</span>
+                    </div>
+                </div>
+                
+                <div class="layer">
+                    <div class="layer-number">2</div>
+                    <div class="layer-content">
+                        <div class="layer-title">中層①：消臭・抗菌層</div>
+                        <div class="layer-desc">
+                            リサイクルポリエステルフェルトに消臭・抗菌・防臭加工。
+                            2回に1回の洗濯でも清潔を保ちます。
+                        </div>
+                        <span class="layer-feature">エコ素材使用</span>
+                    </div>
+                </div>
+                
+                <div class="layer">
+                    <div class="layer-number">3</div>
+                    <div class="layer-content">
+                        <div class="layer-title">中層②：遮熱空気層</div>
+                        <div class="layer-desc">
+                            穴あき加工により空気の層を形成。断熱効果で外部の熱を遮断し、
+                            内部の熱を効率的に逃がします。
+                        </div>
+                        <span class="layer-feature">エアクッション効果</span>
+                    </div>
+                </div>
+                
+                <div class="layer">
+                    <div class="layer-number">4</div>
+                    <div class="layer-content">
+                        <div class="layer-title">内側：耐久速乾層</div>
+                        <div class="layer-desc">
+                            高い速乾性と洗濯耐久性を持つ特殊素材。
+                            肌触りが良く、繰り返しの使用にも耐える強度を実現。
+                        </div>
+                        <span class="layer-feature">長期耐久性</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 会社紹介セクション -->
+    <section class="section company">
+        <div class="container">
+            <h2 class="section-title fade-in">なぜTAMAXだから実現できたのか</h2>
+            
+            <div class="company-story">
+                <div class="story-content">
+                    <h3>50年の服飾技術が生んだイノベーション</h3>
+                    <p>
+                        岐阜県岐阜市で50年以上、肩パッドや脇汗パッドなどの服飾部品を製造してきた株式会社TAMAX。
+                        5,000種類以上の肩パッドを手がける職人たちの技術力が、サウナハットの常識を覆しました。
+                    </p>
+                    
+                    <div class="highlight-box">
+                        <h4>🎯 転機は社員の一言</h4>
+                        <p>「サウナハット作ってみて」</p>
+                        <p>2021年、サウナ好きの社員のこの一言から、TAMAXの新たな挑戦が始まりました。</p>
+                    </div>
+                    
+                    <p>
+                        肩パッド製造で培った「吸湿・速乾・形状保持」の技術。
+                        脇汗パッドで磨いた「消臭・抗菌」の技術。
+                        これらすべてが、サウナふわっとProに結集されています。
+                    </p>
+                </div>
+                
+                <div class="tech-transfer">
+                    <h4 style="margin-bottom: 30px; color: #1e3c72;">技術転用の3つの強み</h4>
+                    
+                    <div class="tech-item">
+                        <div class="tech-icon">🏭</div>
+                        <div class="tech-text">
+                            <div class="tech-title">自社一貫生産</div>
+                            <div class="tech-desc">企画から製造、販売まですべて自社で管理。中間マージンなしで高品質・低価格を実現</div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-item">
+                        <div class="tech-icon">👷</div>
+                        <div class="tech-text">
+                            <div class="tech-title">熟練職人の手作業</div>
+                            <div class="tech-desc">岐阜の工場で1つ1つ丁寧に製造。機械では実現できない細やかな品質管理</div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-item">
+                        <div class="tech-icon">♻️</div>
+                        <div class="tech-text">
+                            <div class="tech-title">SDGsへの取り組み</div>
+                            <div class="tech-desc">創業時からペットボトル再生素材を使用。環境に配慮した持続可能な製造</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- コラボ実績セクション -->
+    <section class="section collaborations">
+        <div class="container">
+            <h2 class="section-title fade-in">全国の名店が認めた品質</h2>
+            
+            <!-- コラボ商品画像 -->
+            <div style="text-align: center; margin: 40px 0;">
+                <img src="https://img07.shop-pro.jp/PA01462/504/product/177927078_o6.png" 
+                     alt="サウナふわっとProコラボモデル" 
+                     style="max-width: 600px; width: 100%; height: auto; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                <p style="color: #6c757d; font-size: 0.9rem; margin-top: 15px;">様々なカラーバリエーションとコラボモデル</p>
+            </div>
+            
+            <div class="collab-grid">
+                <div class="collab-card">
+                    <div class="collab-name">サウナ東京</div>
+                    <div class="collab-desc">赤坂の人気施設でコラボモデル販売中</div>
+                </div>
+                <div class="collab-card">
+                    <div class="collab-name">大垣サウナ</div>
+                    <div class="collab-desc">岐阜の聖地と呼ばれる老舗サウナ</div>
+                </div>
+                <div class="collab-card">
+                    <div class="collab-name">サウナゆげ蔵</div>
+                    <div class="collab-desc">灼熱サウナでも快適な耐熱性を実証</div>
+                </div>
+                <div class="collab-card">
+                    <div class="collab-name">その他多数</div>
+                    <div class="collab-desc">全国の温浴施設で採用実績あり</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ユーザーボイスセクション -->
+    <section class="section testimonials">
+        <div class="container">
+            <h2 class="section-title fade-in">ヘビーサウナーの生の声</h2>
+            
+            <div class="testimonial-card">
+                <div class="quote-icon">"</div>
+                <p class="testimonial-text">
+                    車に置いておくとすぐに乾くので、2〜3軒ハシゴするときにもってこい！
+                    今まで使っていたタオル地のサウナハットは翌日でも湿っていたけど、
+                    これは本当に脱水後にほぼ乾いている。革命的です。
+                </p>
+                <div class="testimonial-author">- ヘビーサウナー（週5でサウナ通い）</div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="quote-icon">"</div>
+                <p class="testimonial-text">
+                    届いて早速、高温のドライサウナで使いました。
+                    すっぽり頭が入る形で深さもちょうどよく、目がちょうど隠れるくらいまででした。
+                    生地が厚めなのに軽くて、髪を熱からしっかり守ってくれました。
+                </p>
+                <div class="testimonial-author">- ふるさと納税利用者</div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="quote-icon">"</div>
+                <p class="testimonial-text">
+                    消臭チップが入っているので、2回に1回の洗濯でも臭いが気になりません。
+                    仕事帰りにサウナに行くことが多いので、メンテナンスが楽なのは本当に助かります。
+                </p>
+                <div class="testimonial-author">- ビジネスパーソンサウナー</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 価格セクション -->
+    <section class="section pricing">
+        <div class="container">
+            <h2 class="section-title fade-in">なぜ4,950円が適正価格なのか</h2>
+            
+            <div class="price-display">4,950</div>
+            
+            <div class="price-reasons">
+                <div class="reason-card">
+                    <div class="reason-title">🏭 中間マージンゼロ</div>
+                    <div class="reason-desc">
+                        企画・製造・販売を自社一貫で行うため、
+                        問屋や商社を通さず、工場直販価格を実現
+                    </div>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-title">🔬 特許レベルの技術</div>
+                    <div class="reason-desc">
+                        50年の服飾技術を結集した4層構造。
+                        他社では真似できない独自の製造技術
+                    </div>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-title">⏰ 長期使用でコスパ最高</div>
+                    <div class="reason-desc">
+                        高い耐久性で1年以上使用可能。
+                        1回あたり約13円で究極の快適性を実現
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTAセクション -->
+    <section class="cta">
+        <div class="container">
+            <h2>サウナライフを変える一枚を手に入れる</h2>
+            <p style="font-size: 1.2rem; opacity: 0.9; margin-bottom: 20px;">
+                全国のサウナーが絶賛する理由を、あなたも体験してください
+            </p>
+            
+            <div class="cta-buttons">
+                <a href="https://tamaxcoltd.shop-pro.jp/?pid=177927078" class="cta-button" target="_blank">
+                    公式ストアで購入する
+                </a>
+                <a href="https://furunavi.jp/product_detail.aspx?pid=1222452" class="cta-button secondary" target="_blank">
+                    ふるさと納税で手に入れる
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="https://tamaxcoltd.com/" target="_blank">TAMAX公式サイト</a>
+                <a href="https://tamaxcoltd.shop-pro.jp/" target="_blank">オンラインストア</a>
+                <a href="https://sauna-ikitai.com/saunas/2336" target="_blank">大垣サウナ情報</a>
+                <a href="https://prtimes.jp/main/html/searchrlp/company_id/134246" target="_blank">プレスリリース</a>
+            </div>
+            <p style="opacity: 0.7; font-size: 0.9rem;">
+                © 2025 株式会社TAMAX - 岐阜から世界へ、サウナ文化の革新を
+            </p>
+        </div>
+    </footer>
+    
+    <script>
+        // スクロールアニメーション
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // レイヤーのホバー効果強化
+        document.querySelectorAll('.layer').forEach((layer, index) => {
+            layer.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.05) translateX(10px)';
+            });
+            
+            layer.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1) translateX(0)';
+            });
+        });
+        
+        // 価格表示のアニメーション
+        const priceDisplay = document.querySelector('.price-display');
+        const pricingSection = document.querySelector('.pricing');
+        
+        const priceObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    priceDisplay.style.animation = 'pulse 1s ease-in-out';
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        if (priceDisplay) {
+            priceObserver.observe(pricingSection);
+        }
+        
+        // スムーズスクロール
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // パララックス効果
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+    </script>
+</body>
+</html>
