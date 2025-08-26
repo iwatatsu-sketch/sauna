@@ -467,6 +467,8 @@
             position: relative;
             z-index: 1;
         }
+
+/* サウナ東京 */
 .collab-card.sauna-tokyo {
     background-image: url('https://imagedelivery.net/QondspN4HIUvB_R16-ddAQ/66e028ca16b7bc09c4cb255d/3ccdd75a581e44a23be6.jpg/fit=cover,w=920,h=920');
     background-size: cover;
@@ -474,29 +476,41 @@
     background-repeat: no-repeat;
 }
 
-/* テキストを読みやすくするためのオーバーレイ（オプション） */
-.collab-card.sauna-tokyo {
+/* 大垣サウナ */
+.collab-card.ogaki-sauna {
+    background-image: url('https://cdn.goope.jp/165512/240418120608-66208e20dd55c_l.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* テキストを読みやすくするためのオーバーレイ */
+.collab-card.sauna-tokyo,
+.collab-card.ogaki-sauna {
     position: relative;
 }
 
-.collab-card.sauna-tokyo::before {
+.collab-card.sauna-tokyo::before,
+.collab-card.ogaki-sauna::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.3); /* 半透明の黒いオーバーレイ */
+    background: rgba(0, 0, 0, 0.3);
     border-radius: inherit;
 }
 
 .collab-card.sauna-tokyo .collab-name,
-.collab-card.sauna-tokyo .collab-desc {
+.collab-card.sauna-tokyo .collab-desc,
+.collab-card.ogaki-sauna .collab-name,
+.collab-card.ogaki-sauna .collab-desc {
     position: relative;
     z-index: 1;
-    color: white; /* テキストを白色に変更 */
+    color: white;
 }
-
+        
         
         /* ユーザーボイスセクション */
         .testimonials {
@@ -929,7 +943,7 @@
                     <div class="collab-name">サウナ東京</div>
                     <div class="collab-desc">赤坂の人気施設でコラボモデル販売中</div>
                 </div>
-                <div class="collab-card">
+                <div class="collab-card ogaki-sauna">
                     <div class="collab-name">大垣サウナ</div>
                     <div class="collab-desc">岐阜の聖地と呼ばれる老舗サウナ</div>
                 </div>
