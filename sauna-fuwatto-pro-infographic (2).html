@@ -497,14 +497,19 @@
     background-position: center;
     background-repeat: no-repeat;
 }
+
 /* テキストを読みやすくするためのオーバーレイ */
 .collab-card.sauna-tokyo,
-.collab-card.ogaki-sauna {
+.collab-card.ogaki-sauna,
+.collab-card.yuge-zou,
+.collab-card.others {
     position: relative;
 }
 
 .collab-card.sauna-tokyo::before,
-.collab-card.ogaki-sauna::before {
+.collab-card.ogaki-sauna::before,
+.collab-card.yuge-zou::before,
+.collab-card.others::before {
     content: '';
     position: absolute;
     top: 0;
@@ -518,7 +523,11 @@
 .collab-card.sauna-tokyo .collab-name,
 .collab-card.sauna-tokyo .collab-desc,
 .collab-card.ogaki-sauna .collab-name,
-.collab-card.ogaki-sauna .collab-desc {
+.collab-card.ogaki-sauna .collab-desc,
+.collab-card.yuge-zou .collab-name,
+.collab-card.yuge-zou .collab-desc,
+.collab-card.others .collab-name,
+.collab-card.others .collab-desc {
     position: relative;
     z-index: 1;
     color: white;
