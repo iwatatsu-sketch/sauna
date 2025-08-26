@@ -467,6 +467,36 @@
             position: relative;
             z-index: 1;
         }
+.collab-card.sauna-tokyo {
+    background-image: url('https://imagedelivery.net/QondspN4HIUvB_R16-ddAQ/66e028ca16b7bc09c4cb255d/3ccdd75a581e44a23be6.jpg/fit=cover,w=920,h=920');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* テキストを読みやすくするためのオーバーレイ（オプション） */
+.collab-card.sauna-tokyo {
+    position: relative;
+}
+
+.collab-card.sauna-tokyo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3); /* 半透明の黒いオーバーレイ */
+    border-radius: inherit;
+}
+
+.collab-card.sauna-tokyo .collab-name,
+.collab-card.sauna-tokyo .collab-desc {
+    position: relative;
+    z-index: 1;
+    color: white; /* テキストを白色に変更 */
+}
+
         
         /* ユーザーボイスセクション */
         .testimonials {
@@ -895,7 +925,7 @@
             </div>
             
             <div class="collab-grid">
-                <div class="collab-card">
+                <div class="collab-card sauna-tokyo">
                     <div class="collab-name">サウナ東京</div>
                     <div class="collab-desc">赤坂の人気施設でコラボモデル販売中</div>
                 </div>
